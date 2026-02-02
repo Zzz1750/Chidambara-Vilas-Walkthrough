@@ -43,16 +43,11 @@
       font-size: 1.1rem;
       cursor: pointer;
     }
-    #test_img
-    {
-      width: 50%;
-    }
   </style>
 </head>
 <body>
   <div id="page1">
     <button id="start_vr">Click</button>
-    <img src="./images/1.JPG" id="test_img" alt="">
   </div>
 
   <h1 id="scene_info">Image 1</h1>
@@ -67,13 +62,13 @@
       mipmaps: false;
       minFilter: linear;
       magFilter: linear;
-    " >
-
+    ">
+    
   </a-sky>
 
     
     <!-- Camera -->
-    <a-entity id="camera-rig" position="0 0.6 0" rotation="0 -90 0">
+    <a-entity id="camera-rig" position="0 1 0" rotation="0 -90 0">
       <a-camera
         fov="65"
         smooth-mouse-look="sensitivity: 0.0001; damping: 0.96"
