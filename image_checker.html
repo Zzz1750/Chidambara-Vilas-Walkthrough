@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./icon_images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./icon_images/favicon.svg" />
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  <title>Chidambara Heritage Walk</title>
+  
+  <style>
+    body{
+      padding: 0;   
+      margin: 0;
+      overflow: hidden;
+    }
+    #scene_info{
+      position: absolute;
+      z-index: 100;
+      top: 5%;
+      left: 5%;
+      background-color: white;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      padding: 10px 20px;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="scene_info">Image 1</h1>
+
+  <a-scene vr-mode-ui="enabled: false" xr-mode-ui="enabled: false" cursor="rayOrigin: mouse">
+  
+    <a-sky></a-sky>
+    
+    <!-- Camera -->
+    <a-entity id="camera-rig" position="0 1.6 0" rotation="0 -90 0">
+      <a-camera
+        fov="90"
+        smooth-mouse-look="sensitivity: 0.0001; damping: 0.96"
+        wasd-controls-enabled="false">
+      </a-camera>
+
+    </a-entity>
+
+    <!-- Top Arrow -->
+    <a-entity rotation="-90 0 0" id="top_arrow" visible="false">
+      <a-circle color="white" radius="0.9" material="opacity: 0.8; transparent: true"></a-circle>
+      <a-plane 
+        src="./icon_images/arrow_model2.png" 
+        width="1" 
+        height="1" 
+        transparent="true" 
+        position="0 0 0.01"
+        material="shader: flat; opacity: 0.8; transparent: true">
+      </a-plane>
+    </a-entity>
+
+    <!-- Bottom Arrow -->
+    <a-entity rotation="-90 180 0"  id="bottom_arrow" visible="false">
+      <a-circle color="white" radius="0.9" material="opacity: 0.8; transparent: true"></a-circle>
+      <a-plane 
+        src="./icon_images/arrow_model2.png" 
+        width="1" 
+        height="1" 
+        transparent="true" 
+        position="0 0 0.01"
+        material="shader: flat; opacity: 0.8; transparent: true">
+      </a-plane>
+
+    <!-- Left Arrow -->
+    <a-entity rotation="-90 0 0" id="left_arrow" visible="false">
+      <a-circle color="white" radius="0.9" material="opacity: 0.8; transparent: true"></a-circle>
+      <a-plane 
+        src="./icon_images/arrow_model2.png" 
+        width="1" 
+        height="1" 
+        transparent="true" 
+        position="0 0 0.01"
+        material="shader: flat; opacity: 0.8; transparent: true">
+      </a-plane>
+    </a-entity>
+
+    <!-- Right Arrow -->
+    <a-entity rotation="-90 180 0"  id="right_arrow" visible="false">
+      <a-circle color="white" radius="0.9" material="opacity: 0.8; transparent: true"></a-circle>
+      <a-plane 
+        src="./icon_images/arrow_model2.png" 
+        width="1" 
+        height="1" 
+        transparent="true" 
+        position="0 0 0.01"
+        material="shader: flat; opacity: 0.8; transparent: true">
+      </a-plane>
+    </a-entity>
+
+
+
+  </a-scene>
+
+  <script>
+    const sky = document.querySelector('a-sky')
+  
+    //arrow var declaration
+    var top_arrow = document.getElementById('top_arrow');
+    var bottom_arrow = document.getElementById('bottom_arrow');
+    var left_arrow = document.getElementById('left_arrow');
+    var left_arrow = document.getElementById('left_arrow');
+
+    
+    let left_location = right_location = top_location = bottom_location = '';
+    let eye1_location = eye2_location = 0;
+    
+    let top_arrow_value = bottom_arrow_value = 0;
+    
+    top_arrow.addEventListener('click', () => handleDirectionClick(top_location));
+    bottom_arrow.addEventListener('click', () => handleDirectionClick(bottom_location));
+    
+
+    var scene_info = document.getElementById('scene_info');
+
+    const functions = {
+      scene1: function() {
+        sky.setAttribute('src','./check.png');
+        top_arrow.setAttribute('position','5 0 0.5')
+        top_arrow.setAttribute('rotation','-90 0 0')
+        bottom_arrow.setAttribute('rotation','-90 180 0')
+        
+        top_arrow_value = 1;
+        bottom_arrow_value = 0;
+        top_location='';
+        bottom_location='';
+
+        scene_info.innerHTML = 'Scene 1'
+        nav_icon_updater();
+      }
+
+    }
+
+    function nav_icon_updater(){
+      top_arrow.setAttribute('visible',top_arrow_value !== 0)
+      bottom_arrow.setAttribute('visible',bottom_arrow_value !== 0)
+    }
+
+    function handleDirectionClick(location) {
+      if (location && functions[location]) {
+        functions[location]();
+      }
+    }
+
+    /*Default Scene*/
+    functions.scene1();
+  </script>
+
+  <!-- Scroll Smoother -->
+  <script>
+  AFRAME.registerComponent('smooth-mouse-look', {
+    schema: {
+      sensitivity: { default: 0.002 },
+      damping: { default: 0.92 }
+    },
+
+    init() {
+      this.yaw = 0;
+      this.pitch = 0;
+      this.vYaw = 0;
+      this.vPitch = 0;
+      this.dragging = false;
+
+      this.onMouseDown = () => this.dragging = true;
+      this.onMouseUp = () => this.dragging = false;
+
+      this.onMouseMove = (e) => {
+        if (!this.dragging) return;
+        this.vYaw -= e.movementX * this.data.sensitivity;
+        this.vPitch -= e.movementY * this.data.sensitivity;
+      };
+
+      window.addEventListener('mousedown', this.onMouseDown);
+      window.addEventListener('mouseup', this.onMouseUp);
+      window.addEventListener('mousemove', this.onMouseMove);
+    },
+
+    tick() {
+      this.yaw += this.vYaw;
+      this.pitch += this.vPitch;
+
+      this.pitch = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, this.pitch));
+
+      this.el.object3D.rotation.set(this.pitch, this.yaw, 0);
+
+      this.vYaw *= this.data.damping;
+      this.vPitch *= this.data.damping;
+    },
+
+    remove() {
+      window.removeEventListener('mousedown', this.onMouseDown);
+      window.removeEventListener('mouseup', this.onMouseUp);
+      window.removeEventListener('mousemove', this.onMouseMove);
+    }
+  });
+</script>
+
+</body>
+</html>
