@@ -13,6 +13,7 @@
       padding: 0;   
       margin: 0;
       overflow: hidden;
+      background-color: black;
     }
     #scene_info{
       position: absolute;
@@ -23,14 +24,35 @@
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       padding: 10px 20px;
       font-size: 1.5rem;
+      opacity: 0;
+    }
+    #page1{
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgb(185, 125, 125);
+      z-index: 100;
+    }
+    #start_vr{
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 8px 15px;
+      font-size: 1.1rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
+  <div id="page1">
+    <button id="start_vr">Click</button>
+  </div>
+
   <h1 id="scene_info">Image 1</h1>
 
-  <a-scene vr-mode-ui="enabled: false" xr-mode-ui="enabled: false" cursor="rayOrigin: mouse">
+  <a-scene vr-mode-ui="enabled: false" xr-mode-ui="enabled: false" cursor="rayOrigin: mouse" visible="false">
   
     <a-sky></a-sky>
     
@@ -122,7 +144,7 @@
 
     const functions = {
       scene1: function() {
-        sky.setAttribute('src','./check.png');
+        sky.setAttribute('src','./images/1.JPG');
         top_arrow.setAttribute('position','5 0 0.5')
         top_arrow.setAttribute('rotation','-90 0 0')
         bottom_arrow.setAttribute('rotation','-90 180 0')
@@ -201,6 +223,25 @@
     }
   });
 </script>
+
+
+    <script>
+    const startVrButton = document.getElementById('start_vr');
+    const aScene = document.querySelector('a-scene');
+    const mainContainer = document.getElementById('page1');
+
+    startVrButton.addEventListener('click', enterVRMode);
+
+    function enterVRMode() {
+    mainContainer.style.display = 'none';
+    
+    aScene.setAttribute('visible', 'true');
+    
+    if (aScene.enterVR) {
+        aScene.enterVR();
+    }
+    }
+  </script>
 
 </body>
 </html>
