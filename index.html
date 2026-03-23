@@ -557,14 +557,17 @@
         
         top_arrow.setAttribute('position','7 0 0')
         top_arrow.setAttribute('rotation','-90 0 0')
+
+        left_arrow.setAttribute('position','1.5 0 -7')
+        left_arrow.setAttribute('rotation','-90 90 0')
         
         top_location ='scene21'
         bottom_location='scene19'
         right_location ='';
-        left_location ='';
+        left_location ='scene87';
 
         bottom_arrow_value = 1;
-        left_arrow_value= right_arrow_value  = 0;
+        left_arrow_value= 1; right_arrow_value  = 0;
         top_arrow_value = 1;
 
 
@@ -1826,7 +1829,7 @@
         right_arrow_value= 0;
         left_arrow_value = 0;
 
-        scene_info.innerHTML = 'Scene 76'
+        scene_info.innerHTML = 'Scene 77'
         nav_icon_updater();
       },
 
@@ -1835,9 +1838,6 @@
 
         top_arrow.setAttribute('position','6 0 0')
         top_arrow.setAttribute('rotation','-90 0 0')
-
-        right_arrow.setAttribute('position','1 1 6')
-        right_arrow.setAttribute('rotation','0 -180 -90')
         
         bottom_arrow.setAttribute('position','-6 0 0')
         bottom_arrow.setAttribute('rotation','-90 -180 0')
@@ -1848,7 +1848,7 @@
         top_location ='scene71'
         bottom_location='scene79'
         right_location ='';
-        left_location ='';
+        left_location ='scene83';
 
         bottom_arrow_value =  top_arrow_value = 1;
         right_arrow_value= 0;
@@ -1882,6 +1882,328 @@
         scene_info.innerHTML = 'Scene 79'
         nav_icon_updater();
       },
+
+      scene80: function(){
+        sky.setAttribute('src','./images/80.JPG');
+
+        right_arrow.setAttribute('position','1 0 6')
+        right_arrow.setAttribute('rotation','-90 -80 0')
+        
+        bottom_arrow.setAttribute('position','-6 0 0')
+        bottom_arrow.setAttribute('rotation','-90 -180 10')
+
+    
+        top_location =''
+        bottom_location='scene81'
+        right_location ='scene79';
+        left_location ='';
+
+        bottom_arrow_value = 1;
+         top_arrow_value = 0;
+        right_arrow_value= 1;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 80'
+        nav_icon_updater();
+      },
+
+      scene81: function(){
+        sky.setAttribute('src','./images/81.JPG');
+
+        top_arrow.setAttribute('position','6 0 1')
+        top_arrow.setAttribute('rotation','-90 0 -10')
+        
+        bottom_arrow.setAttribute('position','-6 4 0')
+        bottom_arrow.setAttribute('rotation','0 90 90')
+
+        top_location ='scene80'
+        bottom_location='scene82'
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value =  top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 81'
+        nav_icon_updater();
+      },
+
+      scene82: function(){
+        sky.setAttribute('src','./images/82.JPG');
+
+        top_arrow.setAttribute('position','6 0 1')
+        top_arrow.setAttribute('rotation','-90 0 -10')
+        
+        bottom_arrow.setAttribute('position','-6 4 0')
+        bottom_arrow.setAttribute('rotation','0 90 -90')
+
+        top_location =''
+        bottom_location='scene81'
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 1; top_arrow_value = 0;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 82'
+        nav_icon_updater();
+      },
+
+      scene83: function(){
+        sky.setAttribute('src','./images/83.JPG');
+
+        top_arrow.setAttribute('position','4 0 0')
+        top_arrow.setAttribute('rotation','-90 0 0')
+        
+        bottom_arrow.setAttribute('position','-3 0 0')
+        bottom_arrow.setAttribute('rotation','-90 -180 10')
+
+    
+        top_location ='scene84'
+        bottom_location='scene78'
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 1;
+        top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 83'
+        nav_icon_updater();
+      },
+
+      scene84: function(){
+        sky.setAttribute('src','./images/84.JPG');
+
+        top_arrow.setAttribute('position','4 0 0')
+        top_arrow.setAttribute('rotation','-90 0 0')
+        
+        bottom_arrow.setAttribute('position','-3 0 0')
+        bottom_arrow.setAttribute('rotation','-90 -180 0')
+
+    
+        top_location ='scene85'
+        bottom_location='scene83'
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 1;
+        top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 84'
+        nav_icon_updater();
+      },
+
+      scene85: function(){
+        sky.setAttribute('src','./images/85.JPG');
+
+        top_arrow.setAttribute('position','4 0 0')
+        top_arrow.setAttribute('rotation','-90 0 0')
+        
+        bottom_arrow.setAttribute('position','-3 0 0')
+        bottom_arrow.setAttribute('rotation','-90 -180 0')
+
+    
+        top_location ='scene86'
+        bottom_location='scene84'
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 1;
+        top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 85'
+        nav_icon_updater();
+      },
+
+      scene86: function(){
+        sky.setAttribute('src','./images/86.JPG');
+
+        left_arrow.setAttribute('position','-1 0 -4')
+        left_arrow.setAttribute('rotation','-90 0 80')
+    
+        top_location =''
+        bottom_location='scene85'
+        right_location ='';
+        left_location ='scene85';
+
+        bottom_arrow_value = 0;
+        top_arrow_value = 0;
+        right_arrow_value= 0;
+        left_arrow_value = 1;
+
+        scene_info.innerHTML = 'Scene 86'
+        nav_icon_updater();
+      },
+
+      scene87: function(){
+        sky.setAttribute('src','./images/87.JPG');
+
+        top_arrow.setAttribute('position','3 0 0.2')
+        top_arrow.setAttribute('rotation','-90 0 0')
+        
+        bottom_arrow.setAttribute('position','-3 0 0')
+        bottom_arrow.setAttribute('rotation','-90 -180 0')
+
+    
+        top_location ='scene88'
+        bottom_location='scene20'
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 1;
+        top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 87'
+        nav_icon_updater();
+      },
+
+      scene88: function(){
+        sky.setAttribute('src','./images/88.JPG');
+
+        top_arrow.setAttribute('position','4 2 0')
+        top_arrow.setAttribute('rotation','0 -90 90')
+        
+        bottom_arrow.setAttribute('position','-3 0 0')
+        bottom_arrow.setAttribute('rotation','-90 -180 0')
+
+    
+        top_location ='scene89'
+        bottom_location='scene87'
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 1;
+        top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 88'
+        nav_icon_updater();
+      },
+
+      scene89: function(){
+        sky.setAttribute('src','./images/89.JPG');
+
+        top_arrow.setAttribute('position','4 3 0.3')
+        top_arrow.setAttribute('rotation','0 -90 90')
+        
+        bottom_arrow.setAttribute('position','-5 0 0')
+        bottom_arrow.setAttribute('rotation','-90 -180 -10')
+
+        top_location ='scene88'
+        bottom_location='scene90'
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 1;
+        top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 89'
+        nav_icon_updater();
+      },
+
+      scene90: function(){
+        sky.setAttribute('src','./images/90.JPG');
+
+        top_arrow.setAttribute('position','3 0 0.2')
+        top_arrow.setAttribute('rotation','-90 0 0')
+        
+        bottom_arrow.setAttribute('position','-6 0 0')
+        bottom_arrow.setAttribute('rotation','-90 -180 0')
+
+        right_arrow.setAttribute('position','0 0 6')
+        right_arrow.setAttribute('rotation','-90 -80 -10')
+
+        left_arrow.setAttribute('position','0 0 -6')
+        left_arrow.setAttribute('rotation','-90 100 -10')
+    
+        top_location ='scene89'
+        bottom_location='scene93'
+        right_location ='scene92';
+        left_location ='scene91';
+
+        bottom_arrow_value = 1;
+        top_arrow_value = 1;
+        right_arrow_value= 1;
+        left_arrow_value = 1;
+
+        scene_info.innerHTML = 'Scene 90'
+        nav_icon_updater();
+      },
+
+      scene91: function(){
+        sky.setAttribute('src','./images/91.JPG');
+
+        top_arrow.setAttribute('position','5 0 1')
+        top_arrow.setAttribute('rotation','-90 0 -5')
+
+        top_location ='scene90'
+        bottom_location=''
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 0;
+        top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 91'
+        nav_icon_updater();
+      },
+
+      scene92: function(){
+        sky.setAttribute('src','./images/92.JPG');
+
+        top_arrow.setAttribute('position','5 0 0')
+        top_arrow.setAttribute('rotation','-90 0 -5')
+
+        top_location ='scene90'
+        bottom_location=''
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 0;
+        top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 92'
+        nav_icon_updater();
+      },
+
+      scene93: function(){
+        sky.setAttribute('src','./images/93.JPG');
+
+        top_arrow.setAttribute('position','5 0 0')
+        top_arrow.setAttribute('rotation','-90 0 0')
+
+        top_location ='scene90'
+        bottom_location=''
+        right_location ='';
+        left_location ='';
+
+        bottom_arrow_value = 0;
+        top_arrow_value = 1;
+        right_arrow_value= 0;
+        left_arrow_value = 0;
+
+        scene_info.innerHTML = 'Scene 93'
+        nav_icon_updater();
+      },
+
+      
     }
 
     function nav_icon_updater(){
